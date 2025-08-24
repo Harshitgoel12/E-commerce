@@ -14,7 +14,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-       const token =  localStorage.getItem("Token")?JSON.parse(localStorage.getItem("Token"));
+       const token =  localStorage.getItem("Token")?JSON.parse(localStorage.getItem("Token")):null;
 const res = await api.get("/myorders", {
   headers: {
     Authorization: `Bearer ${token}`,
