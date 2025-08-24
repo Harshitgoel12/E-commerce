@@ -44,7 +44,7 @@ const OrderDetails = () => {
       },{
         withCredentials:true
       });
-      console.log('Order status updated successfully');
+      
     } catch (err) {
       console.error('Failed to update order status:', err.message);
     }
