@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Add = ({ token }) => {
+  const API_URL=import.meta.env.VITE_API_URL
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);
@@ -80,7 +81,7 @@ const Add = ({ token }) => {
       formData.append("deliveryCharge", deliveryCharge);
       formData.append("estimatedDeliveryDays", estimatedDeliveryDays);
 
-      const response = await axios.post(`http://localhost:4000/api/v1/product`, formData, {
+      const response = await axios.post(`${API_URL}/product`, formData, {
         withCredentials: true,
       });
 
@@ -125,8 +126,6 @@ const Add = ({ token }) => {
     >
       <h2 className="text-2xl font-bold text-[#6b4c3b] mb-2">Add New Product</h2>
       <p className="text-sm text-red-500 mb-4">* Required Fields</p>
-
-      {/* Image Upload Section */}
       <div>
         <p className="text-base font-semibold text-[#6b4c3b] mb-2">
           Upload Product Images<span className="text-red-500 ml-1">*</span>
@@ -156,10 +155,7 @@ const Add = ({ token }) => {
           })}
         </div>
       </div>
-
-      {/* Product Details */}
       <div className="grid sm:grid-cols-2 gap-4">
-        {/* Dropdowns */}
         <div>
           <label className="font-medium text-sm text-[#6b4c3b]">Main Category *</label>
           <select
@@ -294,8 +290,6 @@ const Add = ({ token }) => {
           required
         />
       </div>
-
-      {/* Sizes */}
       {dynamicSizes.length > 0 && (
         <div className="mt-6">
           <label className="font-medium text-sm text-[#6b4c3b]">Size Options</label>
@@ -321,8 +315,6 @@ const Add = ({ token }) => {
           </div>
         </div>
       )}
-
-      {/* Best Seller Checkbox */}
       <div className="mt-6 flex items-center">
         <input
           type="checkbox"
@@ -332,13 +324,9 @@ const Add = ({ token }) => {
         />
         <label className="ml-2 text-sm text-[#6b4c3b]">Mark as Best Seller</label>
       </div>
-
-      {/* Notes */}
       <div className="mt-4 p-3 bg-[#fdf7e9] text-sm text-[#6b4c3b] border border-[#e3d6b1] rounded-md">
         <strong>Note:</strong> Delivery and size info shown to customers during checkout and on the product page.
       </div>
-
-      {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 mt-8">
         <button
           type="submit"

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const OrdersList = () => {
+  const API_URL=import.meta.env.VITE_API_URL
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,7 +12,7 @@ const OrdersList = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const { data } = await axios.get("http://localhost:4000/api/v1/orders",{
+        const { data } = await axios.get(`${API_URL}/orders`,{
           withCredentials:true
         });
         setOrders(data.orders);
@@ -30,8 +31,6 @@ const OrdersList = () => {
   return (
     <div className="p-4 md:p-6">
       <h1 className="text-xl md:text-2xl font-bold mb-4">All Orders</h1>
-
-      {/* Desktop Table */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-sm text-left bg-white shadow rounded-lg">
           <thead className="bg-gray-100">
@@ -86,8 +85,6 @@ const OrdersList = () => {
           </tbody>
         </table>
       </div>
-
-      {/* Mobile Card View */}
       <div className="md:hidden space-y-4">
         {currentOrders.map((order) => {
           const item = order.items[0];
@@ -135,8 +132,6 @@ const OrdersList = () => {
           );
         })}
       </div>
-
-      {/* Pagination Controls */}
       <div className="flex justify-center items-center gap-2 mt-6">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}

@@ -16,7 +16,7 @@ export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 export const currency = (price) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "₹",
   }).format(price);
 
 const App = () => {
@@ -43,7 +43,6 @@ const App = () => {
           <Sidebar />
           <div className="flex-1 p-4 md:p-8 overflow-auto">
             <Routes>
-              {/* 🔐 Protected Routes */}
               <Route
                 path="/"
                 element={

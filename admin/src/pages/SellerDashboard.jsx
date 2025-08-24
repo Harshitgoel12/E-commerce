@@ -14,6 +14,7 @@ import {
 const timeFilters = ["month", "year"];
 
 const SellerDashboard = () => {
+  const API_URL=import.meta.env.VITE_API_URL
   const [selectedRange, setSelectedRange] = useState("month");
   const [stats, setStats] = useState({ totalSales: 0, orderCount: 0 });
   const [chartData, setChartData] = useState([]);
@@ -22,7 +23,7 @@ const SellerDashboard = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:4000/api/v1/dashboard/sales?range=${selectedRange}`,
+          `${API_URL}/dashboard/sales?range=${selectedRange}`,
           { withCredentials: true }
         );
 

@@ -21,7 +21,7 @@ const token =useSelector((state)=>state.singupData.userData);
           <img
             className="w-40 md:w-48 object-contain"
             src={assets.logo}
-            alt="Trendify Logo"
+            alt="YukiLux Logo"
           />
         </Link>
 

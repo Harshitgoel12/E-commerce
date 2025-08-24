@@ -7,6 +7,7 @@ import { UserData } from "../slice/UserSlice";
 import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
+   const API_URL=import.meta.env.VITE_API_URL
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,7 +22,7 @@ const AdminLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/admin/login", 
+          `${API_URL}/admin/login`, 
         { email, password },
         
       );
@@ -48,17 +49,12 @@ const AdminLogin = () => {
   return (
     <div className="flex  h-screen  overflow-y-hidden items-center justify-center  bg-gradient-to-br from-[#f7f3ef] to-[#fff] px-4">
       <div className="w-full mb-40 max-w-md p-8 bg-white rounded-2xl shadow-xl border border-[#f0e0d6]">
-        {/* Logo */}
         <div className="flex justify-center mb-6">
           <img src={assets.logo} alt="Trendify" className="w-40" />
         </div>
-
-        {/* Heading */}
         <h2 className="text-xl font-semibold text-center text-[#5a3e2b] mb-6">
           Admin Login
         </h2>
-
-        {/* Form */}
         <form onSubmit={onSubmitHandler} className="space-y-5">
           <div>
             <label className="block mb-1 text-sm font-medium text-gray-700">

@@ -4,7 +4,7 @@ import { assets } from "../assets/assets";
 import { IoHome } from "react-icons/io5";
 const Sidebar = () => {
   const navItems = [
-    { path: "/", icon: assets.home_icon, label: "Home" }, // ⬅️ Home added here
+    { path: "/", icon: assets.home_icon, label: "Home" }, 
     { path: "/add", icon: assets.add_icon, label: "Add Items" },
     { path: "/list", icon: assets.parcel_icon, label: "List Items" },
     { path: "/orders", icon: assets.order_icon, label: "View Orders" },
@@ -58,7 +58,7 @@ const Sidebar = () => {
                 alt={item.label}
                 className="w-6 h-6 mb-1"
               />
-              {/* <span className="text-[10px]">{item.label}</span> */}
+
             </NavLink>
           ))}
         </div>

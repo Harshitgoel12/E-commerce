@@ -10,6 +10,7 @@ const statusColor = {
 };
 
 const OrderDetails = () => {
+   const API_URL=import.meta.env.VITE_API_URL
   const { id } = useParams();
   const [order, setOrder] = useState(null);
   const [orderStatus, setOrderStatus] = useState('');
@@ -18,7 +19,7 @@ const OrderDetails = () => {
   useEffect(() => {
     async function fetchOrderData() {
       try {
-        const res = await axios.get(`http://localhost:4000/api/v1/order/${id}`,{
+        const res = await axios.get(`${API_URL}/order/${id}`,{
           withCredentials:true
         });
         setOrder(res.data.order);
@@ -38,7 +39,7 @@ const OrderDetails = () => {
 
     try {
       console.log("yha tk to aa gye",id)
-      await axios.put(`http://localhost:4000/api/v1/order/status/${id}`, {
+      await axios.put(`${API_URL}/order/status/${id}`, {
         status: newStatus,
       },{
         withCredentials:true
@@ -67,7 +68,6 @@ const OrderDetails = () => {
       <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center">Order Summary</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Customer Info */}
         <div className="bg-white shadow-md rounded-2xl p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Customer Information</h2>
           <div className="text-sm sm:text-base space-y-2 text-gray-600">
@@ -80,8 +80,6 @@ const OrderDetails = () => {
             </p>
           </div>
         </div>
-
-        {/* Payment Info & Status */}
         <div className="bg-white shadow-md rounded-2xl p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Payment & Order Status</h2>
           <div className="text-sm sm:text-base space-y-2 text-gray-600">
@@ -111,8 +109,6 @@ const OrderDetails = () => {
           </div>
         </div>
       </div>
-
-      {/* Ordered Items */}
       <div className="bg-white shadow-md rounded-2xl p-6">
         <h2 className="text-xl font-semibold mb-6 text-gray-700">Ordered Items</h2>
         {items.length === 0 ? (

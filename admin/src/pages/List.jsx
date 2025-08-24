@@ -6,6 +6,7 @@ import { MdDelete, MdModeEdit } from "react-icons/md";
 import { IoCheckmarkOutline, IoCloseOutline } from "react-icons/io5";
 
 const List = () => {
+    const API_URL=import.meta.env.VITE_API_URL
   const [listProducts, setListProducts] = useState([]);
   const [editItem, setEditItem] = useState(null);
   const [editData, setEditData] = useState({ name: "", price: "", description: "" });
@@ -15,7 +16,7 @@ const List = () => {
 
   const fetchListProducts = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/products`, {
+      const response = await axios.get(`${API_URL}/products`, {
         withCredentials: true,
       });
       if (response.data.success) {
@@ -32,7 +33,7 @@ const List = () => {
   const removeProduct = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/v1/product/${id}`,
+        `${API_URL}/product/${id}`,
        {withCredentials:true}
       );
       if (response.data.success) {
@@ -64,7 +65,7 @@ const List = () => {
     try {
       console.log(editItem)
       const response = await axios.put(
-        `http://localhost:4000/api/v1/product/${editItem}`,
+        `${API_URL}/product/${editItem}`,
         {  ...editData },
         { withCredentials: true }
       );
@@ -93,7 +94,6 @@ const List = () => {
   return (
     <div className="w-full bg-blue-100 overflow-x-auto">
       <div className="min-w-[900px]">
-        {/* Header */}
         <div className="grid grid-cols-[100px_1.2fr_2.2fr_1fr_1.2fr_1fr_120px] bg-[#fdf7ed] border border-[#e7dac5] rounded-t-md py-3 px-4 text-[#6d4c41] font-semibold text-sm uppercase">
           <span>Image</span>
           <span>Name</span>
@@ -103,8 +103,6 @@ const List = () => {
           <span>Price</span>
           <span className="text-center">Action</span>
         </div>
-
-        {/* Rows */}
         {currentProducts.map((item, index) => (
           <div
             key={index}
@@ -186,8 +184,6 @@ const List = () => {
             )}
           </div>
         ))}
-
-        {/* Pagination */}
         <div className="flex justify-center items-center gap-2 py-4">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
