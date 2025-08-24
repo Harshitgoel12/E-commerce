@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: Outfit;
+}
+
+
+/* Tailwind-compatible floating label input */
+.floating-input-group {
+  @apply relative w-full;
+}
+
+.floating-input {
+  @apply w-full border border-gray-300 rounded-md px-4 pt-6 pb-2 text-sm placeholder-transparent focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition;
+}
+.floating-label {
+  @apply absolute left-4 top-2 text-gray-500 text-xs transition-all;
+}
+
+.floating-input {
+  @apply w-full border border-gray-300 rounded-md px-4 pt-6 pb-2 text-base lg:text-lg bg-white placeholder-transparent focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition;
+}
+
+.floating-label {
+  @apply absolute left-4 top-3 text-gray-500 text-sm lg:text-base transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-black;
+}
+
+
+
+
+a.active hr {
+    @apply block;
+}
+
+.prata-regular {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width:640px) {
+    a.active {
+        @apply text-white bg-black;
+    }
+}
