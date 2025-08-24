@@ -1,13 +1,14 @@
 import express from "express";
 import cors from "cors";
-import "dotenv/config";
+import dotenv from "dotenv";
 import connectDB from "./config/mongodb.js";
 import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
 import paymentRoutes from "./routes/paymentRoute.js";
 import cookieParser from "cookie-parser";
-import router from "./routes/RatingandReviewRoute.js"; // corrected relative path
+import router from "./routes/RatingandReviewRoute.js"; 
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -23,8 +24,6 @@ connectCloudinary();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Allowed origins (comma separated in .env or fallback)
 const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(",").map((o) => o.trim())
   : [process.env.ORIGIN, "https://e-commerce-yadr.vercel.app"];
@@ -33,7 +32,7 @@ app.use(
   cors({
     origin: (origin, callback) => {
       if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true); // ✅ only return the matched origin
+        callback(null, true); 
       } else {
         callback(new Error("Not allowed by CORS"));
       }
