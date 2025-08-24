@@ -18,13 +18,12 @@ const AdminLogin = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
-    
-
     try {
       const response = await axios.post(
           `${API_URL}/admin/login`, 
-        { email, password },
-        
+        { email, password },{
+          withCredentials:true
+        }
       );
 
       if (response.data.success) {

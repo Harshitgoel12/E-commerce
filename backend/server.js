@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use(cors({
-  origin:process.env.ORIGIN,
+  origin:[process.env.ORIGIN,"https://e-commerce-yadr.vercel.app/"],
   methods:["POST","GET","DELETE","PUT","PATCH"],
   credentials:true
 }));
