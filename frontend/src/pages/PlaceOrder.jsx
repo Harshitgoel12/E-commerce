@@ -10,7 +10,6 @@ import api from '../api/axios';
 
 const PlaceOrder = () => { 
    const RAZORPAY_KEY_ID= import.meta.env.VITE_RAZORPAY_KEY_ID;
-   console.log(RAZORPAY_KEY_ID)
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.items);
   const subTotal = useSelector((state) => state.cart.subTotal);
