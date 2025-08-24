@@ -103,6 +103,7 @@ const PlaceOrder = () => {
   ...response,
   user: form,
   amount: data.amount / 100,
+  token,
   items: cartItems,
 });
             toast.success("Payment Verified Successfully",{
