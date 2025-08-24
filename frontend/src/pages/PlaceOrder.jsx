@@ -82,9 +82,11 @@ const PlaceOrder = () => {
     }
 
     try {
+      const token=localStorage.getItem("Token")?JSON.parse(localStorage.getItem("Token")):null;
       const { data } = await api.post("/payment/create-order", {
   amount: subTotal * 100,
   user: form,
+  token
 });
       const options = {
         key: RAZORPAY_KEY_ID,

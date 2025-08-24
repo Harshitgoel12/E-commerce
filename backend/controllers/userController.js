@@ -36,7 +36,7 @@ const loginUser = async (req, res) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "Lax",
-        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        maxAge: 7 * 24 * 60 * 60 * 1000, 
       })
       .status(200)
       .json({
@@ -48,6 +48,7 @@ const loginUser = async (req, res) => {
           email: user.email,
           role: user.role,
         },
+        token
       });
   } catch (error) {
     if (process.env.NODE_ENV !== "production") console.error("Login error:", error.message);
