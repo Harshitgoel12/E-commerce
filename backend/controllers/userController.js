@@ -9,10 +9,9 @@ import sendMail from "../utils/SendMail.js";
 import { otpGen } from "otp-gen-agent";
 
 dotenv.config();
-
 // Create JWT Token
-const createToken = (payload) => {
-  return jwt.sign(payload, process.env.JWT_SECRET, {
+const createToken =async (payload) => {
+  return await jwt.sign(payload, process.env.JWT_SECRET, {
     expiresIn: "7d",
   });
 };
@@ -30,7 +29,7 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ success: false, message: "Invalid email or password" });
     }
 
-    const token = createToken({ id: user._id, role: user.role });
+    const token = await createToken({ id: user._id, role: user.role });
 
     return res
       .cookie("authToken", token, {
@@ -193,16 +192,14 @@ const loginAdmin = async (req, res) => {
       return res.status(401).json({ success: false, message: "Invalid credentials" });
     }
 
-    const token = createToken({ id: admin._id, role: admin.role });
+    const token = await createToken({ id: admin._id, role: admin.role });
 
     res.cookie("authToken", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "Lax",
       maxAge: 24 * 60 * 60 * 1000,
-    });
-
-    res.status(200).json({
+    }).status(200).json({
       success: true,
       message: "Admin logged in successfully",
       token,

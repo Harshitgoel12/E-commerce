@@ -8,7 +8,7 @@ dotenv.config();
 const auth = async (req, res, next) => {
   try {
     let token = req.cookies?.authToken;
-
+console.log("token is ",token)
     if (!token && req.headers.authorization?.startsWith("Bearer ")) {
       token = req.headers.authorization.split(" ")[1];
     }
@@ -16,6 +16,7 @@ const auth = async (req, res, next) => {
     if (!token && req.body.token) {
       token = req.body.token;
     }
+   
 
     if (!token) {
       return res.status(401).json({ message: "Unauthorized: No token provided" });
