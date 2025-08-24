@@ -94,7 +94,6 @@ const Collection = () => {
     setCurrentPage(1);
   }, [search, mainCategory, category, subCategory, material, occasion]);
 
-  // Pagination logic
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const paginatedProducts = useMemo(() => {
     const start = (currentPage - 1) * itemsPerPage;

@@ -8,8 +8,6 @@
     font-family: Outfit;
 }
 
-
-/* Tailwind-compatible floating label input */
 .floating-input-group {
   @apply relative w-full;
 }
