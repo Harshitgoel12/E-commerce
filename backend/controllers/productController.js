@@ -59,7 +59,7 @@ const addProduct = async (req, res) => {
       deliveryCharge: deliveryCharge ? Number(deliveryCharge) : 0,
       estimatedDeliveryDays: estimatedDeliveryDays ? Number(estimatedDeliveryDays) : 3,
       images: imageUrls,
-      sellerId: req.user._id, // seller info
+      sellerId: req.user._id, 
       date: Date.now(),
     });
 

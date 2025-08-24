@@ -48,7 +48,6 @@ const CheckoutPage = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8">
-        {/* Cart Items Section */}
         <div className="flex-1 space-y-4">
           {isCartEmpty ? (
             <div className="text-center py-16 text-gray-500">
@@ -96,8 +95,6 @@ const CheckoutPage = () => {
                       ₹{parseFloat(item.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
-
-                  {/* Quantity Stepper */}
                   <div className="mt-3 flex items-center gap-3">
                     <div className="flex items-center border rounded overflow-hidden shadow-sm">
                       <button

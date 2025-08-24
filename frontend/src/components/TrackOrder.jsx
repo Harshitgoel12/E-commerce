@@ -46,8 +46,6 @@ const TrackOrder = () => {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-8">
           📦 Track Your Order
         </h1>
-
-        {/* Order Input Section */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <input
             type="text"
@@ -64,13 +62,9 @@ const TrackOrder = () => {
             {loading ? <Loader2 className="animate-spin w-5 h-5" /> : 'Track Order'}
           </button>
         </div>
-
-        {/* Error Display */}
         {error && (
           <div className="text-center text-red-600 font-semibold text-sm mb-6">{error}</div>
         )}
-
-        {/* Stepper Progress */}
         {orderStatus && !error && (
           <>
             <div className="flex justify-between items-center mb-6">
@@ -96,16 +90,12 @@ const TrackOrder = () => {
                 );
               })}
             </div>
-
-            {/* Animated Progress Bar */}
             <div className="relative h-3 rounded-full bg-gray-200 overflow-hidden mb-6">
               <div
                 className="absolute h-full transition-all duration-500 bg-blue-600 rounded-full"
                 style={{ width: `${((getCurrentStep() + 1) / steps.length) * 100}%` }}
               ></div>
             </div>
-
-            {/* Current Status Text */}
             <div className="text-center mt-4 text-lg sm:text-xl font-semibold text-gray-700">
               Current Status:{' '}
               <span

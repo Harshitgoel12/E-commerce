@@ -53,8 +53,6 @@ const Orders = () => {
                 <p><strong>Total Amount:</strong> {currency}{order.amount?.toFixed(2)}</p>
                 <p><strong>Order Date:</strong> {new Date(order.createdAt).toLocaleDateString()}</p>
               </div>
-
-              {/* Items */}
               {order.items?.map((item, itemIndex) => (
                 <div
                   key={item._id || itemIndex}

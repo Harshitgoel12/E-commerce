@@ -53,8 +53,6 @@ const NavBar = () => {
             FIND WHAT MOVES YOU
           </span>
         </Link>
-
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
           {navItems.map((item) => (
             <NavLink
@@ -88,7 +86,6 @@ const NavBar = () => {
           )}
         </nav>
 
-        {/* Right Side Icons */}
         <div className="flex items-center gap-4 md:gap-6">
           <button className="hover:opacity-80 transition" aria-label="Search">
             <img src={assets.search_icon} alt="Search" className="w-5 h-5" />
@@ -99,7 +96,6 @@ const NavBar = () => {
             
           </Link>
 
-          {/* Login / Logout */}
           {!isLoggedIn ? (
             <Link
               to="/login"
@@ -122,7 +118,6 @@ const NavBar = () => {
 
           )}
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -145,7 +140,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {menuOpen && (
         <div className="md:hidden px-4 pb-4">
           <nav className="flex flex-col gap-3 text-sm font-medium text-gray-700">

@@ -148,7 +148,6 @@ const PlaceOrder = () => {
   return (
     <div className="min-h-[80vh] border-t px-4 sm:px-10 py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
-        {/* LEFT */}
         <div className="w-full lg:w-1/2 bg-white rounded-lg shadow-md p-6 sm:p-10 space-y-8">
           <div>
             <Title text1="DELIVERY" text2="INFORMATION" />
@@ -179,8 +178,6 @@ const PlaceOrder = () => {
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
-
-        {/* RIGHT */}
         <div className="w-full lg:w-1/2 space-y-8">
           <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
             <CartTotal />

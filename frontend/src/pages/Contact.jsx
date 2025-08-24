@@ -5,17 +5,13 @@ import contact from "../assets/contact.png";
 const Contact = () => {
   return (
     <div className="bg-white text-gray-800 font-sans">
-      {/* Title Section */}
       <div className="px-4 md:px-16 lg:px-32 pt-20 border-t border-gray-200 text-center">
         <Title text1="CONTACT" text2="US" />
         <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">
           Need help picking the perfect piece or tracking your order? We're always here for you.
         </p>
       </div>
-
-      {/* Contact Content */}
       <div className="px-4 md:px-16 lg:px-32 mt-16 mb-28 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        {/* Left Image */}
         <div className="w-full">
           <img
             src={contact}
@@ -23,10 +19,7 @@ const Contact = () => {
             className="rounded-3xl w-full h-full object-cover shadow-xl"
           />
         </div>
-
-        {/* Right Contact Info */}
         <div className="flex flex-col gap-8 text-[16px]">
-          {/* Address */}
           <section>
             <h3 className="text-2xl font-semibold text-pink-700 mb-2">Visit Our Boutique</h3>
             <address className="not-italic text-gray-600 leading-relaxed">
@@ -35,8 +28,6 @@ const Contact = () => {
               Los Angeles, CA 90210, USA
             </address>
           </section>
-
-          {/* Contact Info */}
           <section>
             <h3 className="text-2xl font-semibold text-pink-700 mb-2">Get in Touch</h3>
             <p className="text-gray-600">
@@ -57,8 +48,6 @@ const Contact = () => {
               </a>
             </p>
           </section>
-
-          {/* Store Hours */}
           <section>
             <h3 className="text-2xl font-semibold text-pink-700 mb-2">Store Hours</h3>
             <p className="text-gray-600">
@@ -71,8 +60,6 @@ const Contact = () => {
          
         </div>
       </div>
-
-      {/* Google Map */}
       <div className="px-4 md:px-16 lg:px-32 mb-28">
         <h3 className="text-2xl font-semibold text-center mb-6 text-pink-700">
           Find Us on the Map
@@ -89,13 +76,9 @@ const Contact = () => {
           ></iframe>
         </div>
       </div>
-
-      {/* Newsletter */}
       <div className="px-4 md:px-16 lg:px-32 mb-24">
         <NewsLetterBox />
       </div>
-
-      {/* Footer Note */}
       <p className="text-center text-gray-400 text-sm pb-8">
         © {new Date().getFullYear()} yukiLux. All rights reserved.
       </p>

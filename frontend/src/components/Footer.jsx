@@ -28,8 +28,6 @@ const Footer = () => {
             From modern styles to classic traditions, our pieces shine with craftsmanship and love.
           </p>
         </div>
-
-        {/* Navigation Links */}
         <nav aria-label="Footer Navigation">
           <h3 className="text-lg font-semibold mb-4 text-gray-800">Explore</h3>
           <ul className="space-y-3 text-gray-600">
@@ -55,8 +53,6 @@ const Footer = () => {
             </li>
           </ul>
         </nav>
-
-        {/* Contact & Social Media */}
         <div>
           <h3 className="text-lg font-semibold mb-4 text-gray-800">Contact Us</h3>
           <ul className="space-y-3 text-gray-600">
@@ -94,7 +90,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="bg-[#f0ebe5] border-t border-gray-300 py-6 mt-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-700 gap-4">
           <p>

@@ -12,7 +12,6 @@ const NewsLetterBox = () => {
       return;
     }
 
-    // Simulate API call here
     setStatus('Subscribed successfully! 🎉');
     setEmail('');
   };

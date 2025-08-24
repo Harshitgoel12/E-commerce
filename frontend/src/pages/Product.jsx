@@ -252,8 +252,6 @@ return;
             )}
           </div>
         </div>
-
-        {/* Right: Product Info */}
         <div className="flex-1 space-y-4">
           <h1 className="text-3xl font-semibold">{name}</h1>
 
@@ -327,8 +325,6 @@ return;
           </div>
         </div>
       </div>
-
-      {/* Lifestyle Banner */}
       <div className="mt-12 bg-yellow-50 rounded-xl px-6 py-10 text-center">
         <h2 className="text-2xl font-semibold mb-4">
           Where Elegance Meets Emotion
@@ -400,8 +396,6 @@ return;
             </div>
           ))
         )}
-
-        {/* Pagination */}
         {Math.ceil(reviews.length / REVIEWS_PER_PAGE) > 1 && (
           <div className="flex justify-center items-center gap-4 mt-4">
             <button
@@ -428,12 +422,9 @@ return;
             </button>
           </div>
         )}
-
-        {/* Review Form */}
         <div className="mt-10 border-t pt-6 max-w-lg">
           <h4 className="text-xl font-semibold mb-4">Write a Review</h4>
           <form onSubmit={handleReviewSubmit} className="space-y-4">
-            {/* Rating */}
             <div>
               <label className="block text-sm mb-1">Rating</label>
               <div className="flex gap-1">
@@ -458,8 +449,6 @@ return;
                 ))}
               </div>
             </div>
-
-            {/* Review Text */}
             <div>
               <label className="block text-sm mb-1">Your Review</label>
               <textarea
@@ -475,8 +464,6 @@ return;
                 placeholder="Write your thoughts here..."
               />
             </div>
-
-            {/* Optional Image */}
             <div>
               <label className="block text-sm mb-1">
                 Upload an Image (optional)

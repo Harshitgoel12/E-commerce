@@ -69,7 +69,6 @@ const Signup = () => {
       <ToastContainer position="top-center" autoClose={3000} />
 
       <div className="flex flex-col md:flex-row h-screen w-full">
-        {/* Left image section */}
         <div className="hidden md:block md:w-1/2 relative overflow-hidden">
           <img
             src={image}
@@ -90,8 +89,6 @@ const Signup = () => {
             </p>
           </motion.div>
         </div>
-
-        {/* Right form section */}
         <div className="md:w-1/2 flex items-center justify-center bg-gradient-to-br from-[#fff9f4] to-[#fbe7e1] px-4 py-10">
           <form
             onSubmit={onSubmitHandler}

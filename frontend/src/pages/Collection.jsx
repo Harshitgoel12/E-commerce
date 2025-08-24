@@ -122,8 +122,6 @@ const Collection = () => {
   return (
     <div className="flex flex-col lg:flex-row px-4 py-6 gap-6 bg-white min-h-screen">
       <Toaster position="top-right" />
-
-      {/* Sidebar */}
       <aside className="w-full lg:w-64">
         <div className="flex items-center justify-between lg:block mb-4">
           <h2 className="text-xl font-semibold text-gray-900">Filters</h2>
@@ -136,7 +134,6 @@ const Collection = () => {
         </div>
 
         <div className={`${showFilters ? "block" : "hidden"} lg:block`}>
-          {/* Search */}
           <input
             type="text"
             placeholder="Search products..."
@@ -144,8 +141,6 @@ const Collection = () => {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full mb-4 px-4 py-2 border border-gray-300 rounded-md text-sm focus:ring-1 focus:ring-pink-500 focus:outline-none"
           />
-
-          {/* Filters */}
           <div className="bg-white border p-4 rounded-xl shadow-sm space-y-4">
             {renderFilterSection("Main Category", filterOptions.mainCategory, mainCategory, setMainCategory)}
             {renderFilterSection("Category", filterOptions.category, category, setCategory)}
@@ -162,8 +157,6 @@ const Collection = () => {
           </button>
         </div>
       </aside>
-
-      {/* Main Content */}
       <main className="flex-1">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
           <Title text1="Shop" text2="Now" />
@@ -206,8 +199,6 @@ const Collection = () => {
                 </p>
               )}
             </div>
-
-            {/* Pagination */}
             {totalPages > 1 && (
               <div className="flex justify-center mt-8 gap-2 flex-wrap">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (

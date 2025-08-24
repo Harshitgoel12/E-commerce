@@ -13,7 +13,6 @@ const RefundPolicy = () => {
       </p>
 
       <div className="space-y-10 mt-10">
-        {/* Returns */}
         <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
           <h2 className="text-xl font-semibold text-gray-800 mb-2">Returns</h2>
           <p className="text-gray-600">
@@ -21,8 +20,6 @@ const RefundPolicy = () => {
             must be unused, in its original packaging, and with a valid receipt or proof of purchase.
           </p>
         </div>
-
-        {/* Refunds */}
         <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
           <h2 className="text-xl font-semibold text-gray-800 mb-2">Refunds</h2>
           <p className="text-gray-600">
@@ -30,16 +27,12 @@ const RefundPolicy = () => {
             processed to your original payment method within <span className="font-medium">5–7 business days</span>.
           </p>
         </div>
-
-        {/* Non-Returnable Items */}
         <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
           <h2 className="text-xl font-semibold text-gray-800 mb-2">Non-Returnable Items</h2>
           <p className="text-gray-600">
             Personalized or custom-made items cannot be returned unless damaged or defective.
           </p>
         </div>
-
-        {/* Shipping */}
         <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
           <h2 className="text-xl font-semibold text-gray-800 mb-2">Shipping</h2>
           <p className="text-gray-600">

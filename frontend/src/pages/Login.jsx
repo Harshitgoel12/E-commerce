@@ -50,7 +50,6 @@ const Login = () => {
       <NavBar />
 
       <div className="flex flex-col md:flex-row h-screen">
-        {/* Left Image + Text */}
         <div className="hidden md:block md:w-1/2 h-full relative">
           <img
             src={image}
@@ -71,14 +70,11 @@ const Login = () => {
             </p>
           </motion.div>
         </div>
-
-        {/* Right Login Form */}
         <div className="w-full md:w-1/2 h-full flex items-center justify-center bg-gradient-to-br from-[#fff4f0] to-[#fdeae4] p-6">
           <form
             onSubmit={onSubmitHandler}
             className="bg-white shadow-md rounded-xl w-full max-w-md px-8 py-6 flex flex-col gap-5"
           >
-            {/* Header */}
             <div className="text-center">
               <h2 className="text-3xl font-semibold text-gray-900 prata-regular">
                 Welcome Back
@@ -87,8 +83,6 @@ const Login = () => {
                 Sign in to continue your sparkle ✨
               </p>
             </div>
-
-            {/* Email */}
             <div className="flex flex-col gap-1">
               <label htmlFor="email" className="text-sm font-medium text-gray-700">
                 Email Address
@@ -104,8 +98,6 @@ const Login = () => {
                 className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
               />
             </div>
-
-            {/* Password */}
             <div className="flex flex-col gap-1">
               <label htmlFor="password" className="text-sm font-medium text-gray-700">
                 Password
@@ -121,21 +113,15 @@ const Login = () => {
                 className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
               />
             </div>
-
-            {/* Error */}
             {error && (
               <div className="text-sm text-red-600 text-center">{error}</div>
             )}
-
-            {/* Links */}
             <div className="flex justify-between text-sm text-gray-600">
               <p className="cursor-pointer hover:underline">Forgot password?</p>
               <a href="/signup" className="text-pink-600 hover:underline font-medium">
                 New here? Sign up
               </a>
             </div>
-
-            {/* Button */}
             <button
               type="submit"
               className="w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700 transition font-medium"

@@ -20,9 +20,9 @@ export const createOrder = async (req, res) => {
       notes: req.body.notes,
     });
 
-    res.status(200).json(order);
+    return res.status(200).json(order);
   } catch (error) {
-    res.status(500).json({ message: 'Order creation failed', error });
+    return res.status(500).json({ message: 'Order creation failed', error });
   }
 };
 
@@ -56,7 +56,6 @@ export const verifyPayment = async (req, res) => {
       images: Array.isArray(item.images) ? item.images[0] : item.images, 
     }));
 
-    // 3. Create Order
     const newOrder = new Order({
       user,
       items: processedItems,
@@ -79,10 +78,10 @@ export const verifyPayment = async (req, res) => {
     }
 
    
-    res.status(200).json({ message: 'Order verified and saved successfully.' });
+    return res.status(200).json({ message: 'Order verified and saved successfully.' });
 
   } catch (error) {
     console.error('Payment Verification Error:', error);
-    res.status(500).json({ message: 'Internal Server Error', error: error.message });
+    return res.status(500).json({ message: 'Internal Server Error', error: error.message });
   }
 };

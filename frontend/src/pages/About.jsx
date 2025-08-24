@@ -25,13 +25,9 @@ const About = () => {
 
   return (
     <div className="px-4 md:px-16 lg:px-32">
-      
-      {/* Page Title */}
       <div className="pt-12 text-center border-t">
         <Title text1="ABOUT" text2="US" />
       </div>
-
-      {/* Image + Text Section */}
       <div className="grid md:grid-cols-2 gap-8 items-start my-20">
         <img
           src={aboutImage}
@@ -62,8 +58,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      {/* Why Choose Us Section */}
       <div className="py-10 text-center">
         <Title text1="WHY" text2="CHOOSE US" />
       </div>
@@ -80,8 +74,6 @@ const About = () => {
           </div>
         ))}
       </div>
-
-      {/* Newsletter Box */}
       <NewsLetterBox />
     </div>
   );
