@@ -10,6 +10,7 @@ import cookieParser from 'cookie-parser';
 import router from "../backend/routes/RatingandReviewRoute.js"
 
 
+
 const app = express();
 const port = process.env.PORT || 4000;
 connectDB().then((res)=>{
@@ -25,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use(cors({
-  origin:["http://localhost:5173","http://localhost:5174"],
+  origin:process.env.ORIGIN,
   methods:["POST","GET","DELETE","PUT","PATCH"],
   credentials:true
 }));
