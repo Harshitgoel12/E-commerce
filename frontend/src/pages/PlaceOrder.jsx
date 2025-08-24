@@ -55,7 +55,7 @@ const PlaceOrder = () => {
 
     if (!emailRegex.test(email)) return 'Invalid email address';
     if (!mobileRegex.test(mobile)) return 'Invalid mobile number';
-    return '';
+    return ''
   };
 
   const handlePlaceOrder = async () => {
