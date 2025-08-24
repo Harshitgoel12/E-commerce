@@ -45,7 +45,7 @@ const Product = () => {
         setLoading(true);
 
         const [productRes,reviewRes] = await Promise.all([
-          api.get(`/v1/product/${productId}`),
+          api.get(`/product/${productId}`),
         api.get(`/review/${productId}`),
         ]);
 

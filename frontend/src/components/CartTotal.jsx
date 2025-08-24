@@ -33,12 +33,9 @@ const CartTotal = () => {
 
   return (
     <div className="w-full bg-white border p-4 rounded-xl shadow-md">
-      {/* Title */}
       <div className="text-2xl mb-5">
         <Title text1="CART" text2="TOTAL" />
       </div>
-
-      {/* Pricing Details */}
       <div className="flex flex-col gap-4 text-sm sm:text-base">
         <div className="flex justify-between items-center">
           <span className="font-medium">Sub Total</span>

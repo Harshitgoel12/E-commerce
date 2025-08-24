@@ -8,7 +8,8 @@ import yukiLux from "../assets/yuki.svg"
 import { toast } from 'react-toastify';
 import api from '../api/axios';
 
-const PlaceOrder = () => {
+const PlaceOrder = () => { 
+   const RAZORPAY_KEY_ID= import.meta.env.RAZORPAY_KEY_ID
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.items);
   const subTotal = useSelector((state) => state.cart.subTotal);
@@ -86,7 +87,7 @@ const PlaceOrder = () => {
   user: form,
 });
       const options = {
-        key: 'rzp_test_UcYroVrL7hFOXG',
+        key: RAZORPAY_KEY_ID,
         currency: data.currency,
         amount: data.amount,
         order_id: data.id,
