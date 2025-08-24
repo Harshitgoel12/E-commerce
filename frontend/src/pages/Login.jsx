@@ -31,7 +31,6 @@ const Login = () => {
     try {
      const response = await api.post("/login", loginData);
 
-
       const user = response.data.user;
       dispatch(UserData(user));
       localStorage.setItem("User", JSON.stringify(user));
