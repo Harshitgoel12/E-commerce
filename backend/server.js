@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(",").map((o) => o.trim())
-  : [process.env.ORIGIN, "https://e-commerce-yadr.vercel.app","https://localhost:5173","https://e-commerce-zeta-tan.vercel.app/"."*"];
+  : [process.env.ORIGIN, "https://e-commerce-yadr.vercel.app","https://localhost:5173","https://e-commerce-zeta-tan.vercel.app/","*"];
 
 app.use(
   cors({
